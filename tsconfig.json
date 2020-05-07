@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./public/",
     "noImplicitAny": true,
     "sourceMap": true,
@@ -8,6 +8,7 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
+    "rootDir": ".",
     "jsxFactory": "react.createElement",
     "paths": {
       "@root/*": [

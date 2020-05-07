@@ -6,27 +6,26 @@ module.exports = {
   entry: {
     app: path.resolve(__dirname, '../src/index.tsx'),
   },
-  devtool: "source-map",
   output: {
     path: path.resolve(__dirname, '../public'),
     publicPath: '/',
     filename: '[hash].bundle.js',
   },
-  devServer: {
-    contentBase: path.join(__dirname, '../public'),
-    compress: true,
-    port: 8080,
-    hot: true,
-    open: true,
-  },
-  target: 'web',
-  mode: 'development',
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'ts-loader',
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -46,4 +45,4 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-};
+}

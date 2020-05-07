@@ -1,10 +1,10 @@
 import * as react from 'react';
 
-export const User: react.SFC<{ id: string, name: string }> = ({ id, name }) => {
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p><small>{id}</small></p>
-    </div>
-  );
-}
+interface Props { id: string; name: string }
+
+export const User: React.SFC<Props> = ({ id, name }) => (
+  <div>
+    <h2>{name}</h2>
+    <p><small>{id}</small></p>
+  </div>
+);
